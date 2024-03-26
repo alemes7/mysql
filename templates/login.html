@@ -1,0 +1,68 @@
+{% extends 'index.html' %}
+
+{% block head %}
+    <style>
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-form {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .login-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .login-form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .error-mensagem {
+            color: red;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="login-container">
+        <div class="login-form">
+            <h2>Login</h2>
+            <form method="POST" action="/login">
+                <label for="login">Nome de Usuário:</label>
+                <input type="text" id="login" name="login">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha">
+                <input type="submit" value="Entrar">
+            </form>
+            <p class="error-mensagem">{{ mensagem }}</p>
+        </div>
+    </div>
+{% endblock %}

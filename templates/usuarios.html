@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+{% block head %}
+    <style>
+        .usuario-container {
+            text-align: center;
+            margin-top: 50px;
+            font-family: Arial, sans-serif;
+        }
+
+        .usuario-titulo {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .usuario-nome {
+            font-size: 36px;
+            color: #007bff;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="usuario-container">
+        <h1 class="usuario-titulo">Olá, bem-vindo(a) de volta!</h1>
+        <p class="usuario-nome">{{ usuario }}, que bom te ver por aqui novamente!</p>
+        <p>A conexão com nosso sistema foi realizada com sucesso.</p>
+    </div>
+{% endblock %}
